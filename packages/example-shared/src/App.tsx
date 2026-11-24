@@ -28,8 +28,17 @@ import SuppressMenuItems from './examples/Suppress';
 import ClearData from './examples/ClearData';
 import ProfileExample from './examples/Profile';
 import SslError from './examples/SslError';
+import ExternalScripts from './examples/ExternalScripts';
 
 const TESTS = {
+  ExternalScripts: {
+    title: 'ExternalScripts',
+    testId: 'externalScripts',
+    description: 'User scripts added by other native code',
+    render() {
+      return <ExternalScripts />;
+    },
+  },
   Messaging: {
     title: 'Messaging',
     testId: 'messaging',
@@ -224,7 +233,7 @@ const styles = StyleSheet.create({
 
 export default function App() {
   const [restarting, setRestarting] = useState(false);
-  const [currentTest, setCurrentTest] = useState(TESTS.Alerts);
+  const [currentTest, setCurrentTest] = useState(TESTS.ExternalScripts);
 
   const simulateRestart = () => {
     setRestarting(true);
